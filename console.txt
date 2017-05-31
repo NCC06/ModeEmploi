@@ -1,0 +1,61 @@
+------------------------------------------------------
+UTILISATION DE LA CONSOLE
+------------------------------------------------------
+
+
+ctrl + l   Clear
+ctrl + d   Close
+ctrl + a   ramene le curseur au début
+
+ctrl + u   supprime ce qui est a gauche du curseur
+ctrl + k                         droite du curseur
+
+ctrl + w   supprime le mot a gauche
+ctrl + y   colle ce qui a été supprimé
+
+
+--------------------------------------------------
+Affichage des fichiers 
+--------------------------------------------------
+ls         afficher les fichiers du répertoire
+ls  -a     afficher aussi les fichiers cachés
+ls  -A     sans les fichier .. et .   (pas très utile)
+ls  -F     faire la distinction entre type (pas très utile, mets des / après les noms de dossiers..)
+ls  -l     afficher détails
+ls  -h     Human readable (afficher la taille des fichiers plus simplement)
+ls  -t     trier par date de modif
+ls  -r     trier par sens inverse
+
+Astuce: ls -larth et comme ca il y a tout. 
+
+cat nomFichier      Ouvre le fichier entier en arrivant en bas du fichier
+less nomFichchier   Ouvre le fichier en fonction de la place et nous laisse descendre dedans
+
+head nomFichier     affiche le début du fichier
+tail nomFichier     affiche la fin du fichier
+
+---------------------------------------------------
+CREATION / SUPPRESSION DE FICHIER
+--------------------------------------------------
+
+touch nomFichier    Creation fichier
+
+mkdir nomDossier    Creation dossier
+      - p dossier/sousDossier/sousdossier  
+
+rm nomFichier       Suppression fichier
+   - f nomFic       Forcer la suppression
+   - r nomDos       Supprimer dossier (et son contenu)
+
+rmdir               Supprimer si dossier vide
+
+                                                                                    ----------------|
+cp nomFichier nomCopieFichier       Faire copie fichier                                             |
+cp nomFichier nomDossierOuCopier    Copier dans un dossier                                          |
+                        /newName    avec nouveau nom de fichier                                     |-------> cp ou mv
+                                                                                                    |       mv = déplacer
+cp *.jpg nomDossier                 copier tout les fichiers type jpg dans dossier (jpg exemple)    |
+cp exem* nomDossier                 copier tout les fichiers qui commence par exem                  |
+                                                                                    ----------------|
+                 
+
