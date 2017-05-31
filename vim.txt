@@ -1,0 +1,72 @@
+
+------------------------------------
+BASE
+------------------------------------
+
+Soit on est en mode interactif soit en mode insertion
+Si on a --INSERT-- en bas de la fenetre on est en mode insertion on peut donc écrire
+Echap pour sortir du mode insertion
+i pour se mettre en mode insertion 
+
+LES FONCTIONS CI DESSOUS SONT DONC POUR LE MODE INTERACTIF
+
+------------------------------------
+DEPLACEMENT
+------------------------------------
+
+h j k l
+
+0 Début de ligne
+$ Fin de ligne
+w  mot par mot
+
+XG Aller ligne X
+G Aller à la derniere ligne
+gg Aller à la première ligne
+
+/mot Chercher mot   
+    n aller à la prochaine itération
+    N aller à l'itération précédente 
+
+:sp nomFichier Découper l'écran horizontalement et ouvrir autre fichier
+:vs nomFichier Découper l'écran verticalement et ouvrir autre fichier
+
+ctrl w puis ctrl w  Passer de viewport en viewport
+       puis  " = "  Egaliser viewports 
+
+------------------------------------
+Sauvegarde etc
+------------------------------------
+:w sauvegarder
+:q quitter
+:x sauvegarder et quitter (ou :wq)
+
+
+------------------------------------
+Copier - Coller
+------------------------------------
+
+dd Effacer ligne (couper)
+    dXd Effacer X lignes
+dw Effacer mot (jusqu'a l'espace)
+d0 Effacer jusqu'a début de ligne
+d$ Effacer jusqu'a fin de ligne
+
+yy Copier une ligne
+    yXy Copier X lignes
+yw Copier mot
+y$ Copier jusqu'a fin de ligne
+
+p Coller
+
+:s/ancienMot/nouveauMot remplace une fois un mot par un autre
+:%s/ancienMot/nouveauMot/g remplace partout un mot par un autre
+
+
+------------------------------------
+Autres
+------------------------------------
+
+u Annuler / Undo
+r puis caractère: Remplacer la lettre sur laquelle on est
+ 
