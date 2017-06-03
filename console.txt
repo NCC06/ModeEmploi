@@ -58,4 +58,14 @@ cp *.jpg nomDossier                 copier tout les fichiers type jpg dans dossi
 cp exem* nomDossier                 copier tout les fichiers qui commence par exem                  |
                                                                                     ----------------|
                  
-
+----------------------------------------------------
+GCC / COMPILATION
+----------------------------------------------------
+-c      Obtenir un .o (ne pas linker)
+-v      Mode verbeux (afficher plus de détails)
+-I      Spécifie où sont les headers. Exemple gcc sources/*.c -I dossierheaders -o Programme
+-pipe   Ne fais pas de fichier temporaire
+-Ox     Optimise le code, x de 1 à 6. 6 optimisation max
+-Os     Raccourci le code
+-g      Mode Debugger ajouté à l'executable
+ 
