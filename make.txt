@@ -1,0 +1,87 @@
+Pour les noms d'exécutables et d'arguments :
+
+AR : programme de maintenance d'archive (ar) ;
+CC : compilateur C (gcc) ;
+RM : commande pour effacer un fichier (rm) ;
+TEX : programme pour créer un fichier TeX dvi à partir d'un source TeX (latex) ;
+ARFLAGS : paramètres à passer au programme de maintenance d'archives ;
+CFLAGS : paramètres à passer au compilateur C ;
+LDFLAGS : paramètres à passer au compilateur pour l'éditions de liens.
+
+------------------
+
+Pour les noms de répertoires et les destinations :
+
+prefix : racine du répertoire d'installation (= /usr/local) ;
+exec_prefix : racine pour les binaires (= $(prefix)) ;
+bindir : répertoire d'installation des binaires (= $(exec_prefix)/bin);
+libdir : répertoire d'installation des librairies (= $(exec_prefix)/lib) ;
+datadir : répertoire d'installation des données statiques pour le programme (= $(exec_prefix)/lib) ;
+statedir : répertoire d'installation des données modifiables par le programme (= $(prefix)/lib);
+includedir : répertoire d'installation des en-têtes (= $(prefix)/include) ;
+mandir : répertoire d'installation des fichiers de manuel (= $(prefix)/man) ;
+manxdir : répertoire d'installation des fichiers de la section x du manuel (= $(prefix)/manx) ;
+infodir : répertoire d'installation des fichiers info (= $(prefix)/info) ;
+srcdir: répertoire d'installation des fichiers sources (= $(prefix)/src).
+
+-----------
+
+all : compile tous les fichiers source pour créer l'exécutable principal ;
+install: exécute all, et copie l'exécutable, les librairies, les datas, et les fichiers en-tête s'il y en a dans les répertoires de destination ;
+uninstall : détruit les fichiers créés lors de l'installation, mais pas les fichiers du répertoire d'installation (où se trouvent les fichiers source et le Makefile) ;
+clean : détruit tout les fichiers créés par all ;
+info : génère un fichier info ;
+dvi : génère un fichier dvi ;
+dist : crée un fichier tar de distribution.i
+
+------------
+
+$@ : nom de la cible ;
+$< : première dépendance de la liste des dépendances ;
+$? : les dépendances plus récentes que la cible ;
+$^ : toutes les dépendances ;
+$* : correspond au ' * ' simple dans le shell, i.e. représente n'importe quel nom.
+
+-------------
+
+-n : liste ce que make va faire, sans le faire ;
+-f : indique le fichier Makefile ;
+-j3 : parallélise l'exécution de make (très utile sur biprocesseur) ;
+-p : liste les règles implicites ;
+
+
+
+-------------------------------------
+Exemple de Makefile
+-------------------------------------
+
+.PHONY: clean, mrproper
+.SUFFIXES
+
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
+
+
+
+
+ll: main.o fonctions.o								
+        $(CC) $^ -o Programme
+ 
+main.o: main.c fonctions.h
+        $(CC) -c $< -o $@ $(CFLAGS)
+ 
+fonctions.o: fonctions.c
+        $(CC) -c $^ -o s$  $(CFLAGS)
+---------
+%.o: %.c
+	$(CC) -c $< -o $@ $(CFLAGS)
+
+
+
+
+clean:
+        rm -rf *.o
+
+mrproper: clean
+        rm -rf Prs$ 
+
